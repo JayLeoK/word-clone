@@ -12,7 +12,6 @@ function GuessInput({ submitGuess }) {
     <form className={"guess-input-wrapper"} onSubmit={handleSubmit}>
       <label htmlFor="guess-input">Enter five-character guess: </label>
       <input
-        className="guess-input"
         id="guess-input"
         value={guess}
         type="text"
@@ -20,7 +19,7 @@ function GuessInput({ submitGuess }) {
           setGuess(event.target.value.toUpperCase());
         }}
         pattern="[A-Z]{5}"
-        aria-label="five characters"
+        title="5 letter word"
       />
     </form>
   );
