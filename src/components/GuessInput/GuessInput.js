@@ -12,6 +12,7 @@ function GuessInput({ submitGuess }) {
     <form className={"guess-input-wrapper"} onSubmit={handleSubmit}>
       <label htmlFor="guess-input">Enter five-character guess: </label>
       <input
+        required
         id="guess-input"
         value={guess}
         type="text"
