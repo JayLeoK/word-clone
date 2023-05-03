@@ -6,7 +6,7 @@ function Guess({ value }) {
     <p className="guess">
       {range(0, 5).map((index) => (
         <span className={"cell"} key={index}>
-          {value ? value[index] : null}
+          {value ? value[index] : undefined}
         </span>
       ))}
     </p>

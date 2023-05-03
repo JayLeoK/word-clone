@@ -9,7 +9,7 @@ function GuessResults({ guesses }) {
       {range(0, NUM_OF_GUESSES_ALLOWED).map((index) => (
         <Guess
           key={index}
-          value={index < NUM_OF_GUESSES_ALLOWED ? guesses[index] : null}
+          value={index < NUM_OF_GUESSES_ALLOWED ? guesses[index] : undefined}
         />
       ))}
     </>
