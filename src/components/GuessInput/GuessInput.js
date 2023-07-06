@@ -1,5 +1,7 @@
 import React from "react";
-function GuessInput({ submitGuess, disabled }) {
+import Keyboard from "../Keyboard";
+
+function GuessInput({ submitGuess, disabled, guesses }) {
   const [guessForm, setGuessForm] = React.useState("");
 
   function handleSubmit(event) {
@@ -9,21 +11,25 @@ function GuessInput({ submitGuess, disabled }) {
   }
 
   return (
-    <form className={"guess-input-wrapper"} onSubmit={handleSubmit}>
-      <label htmlFor="guess-input">Enter five-character guess: </label>
-      <input
-        required
-        disabled={disabled}
-        id="guess-input"
-        value={guessForm}
-        type="text"
-        onChange={(event) => {
-          setGuessForm(event.target.value.toUpperCase());
-        }}
-        pattern="[A-Z]{5}"
-        title="5 letter word"
-      />
-    </form>
+    <>
+      <form className={"guess-input-wrapper"} onSubmit={handleSubmit}>
+        <label htmlFor="guess-input">Enter five-character guess: </label>
+        <input
+          required
+          disabled={disabled}
+          id="guess-input"
+          value={guessForm}
+          type="text"
+          onChange={(event) => {
+            setGuessForm(event.target.value.toUpperCase());
+          }}
+          pattern="[A-Z]{5}"
+          maxLength={5}
+          title="5 letter word"
+        />
+      </form>
+      <Keyboard setGuessForm={setGuessForm} guesses={guesses} />
+    </>
   );
 }
 
